@@ -6,7 +6,7 @@ use std::{
 };
 
 pub struct JiraDatabase {
-    database: Box<dyn Database>,
+    pub database: Box<dyn Database>,
 }
 
 impl JiraDatabase {
@@ -113,7 +113,7 @@ impl JiraDatabase {
     }
 }
 
-trait Database {
+pub trait Database {
     fn read_db(&self) -> Result<DBState>;
     fn write_db(&self, db_state: &DBState) -> Result<()>;
 }
