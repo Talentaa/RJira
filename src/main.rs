@@ -16,7 +16,7 @@ fn main() {
 
     loop {
         clearscreen::clear().unwrap();
-        
+
         if let Some(page) = nav.get_current_page() {
             if let Err(error) = page.draw_page() {
                 error_handle(error);
@@ -37,13 +37,6 @@ fn main() {
         } else {
             break;
         }
-
-        // TODO: implement the following functionality:
-        // 1. get current page from navigator. If there is no current page exit the loop.
-        // 2. render page
-        // 3. get user input
-        // 4. pass input to page's input handler
-        // 5. if the page's input handler returns an action let the navigator process the action
     }
 }
 
